@@ -1,0 +1,53 @@
+#+title: Continuous Compounding the Hard Way
+#+author: Matt Brigida, Ph.D.
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+
+* Continuous Compounding
+
+Let /Q/ be the annual stated rate, and let there be /m/ compounding periods.  Then the /Effective Annual Rate/ is:
+
+$$EAR = (1 + \frac{Q}{m})^m - 1$$
+
+Letting the number of compounding periods increase to infinity we have:
+
+$$lim_{n\to\infty} = (1 + \frac{Q}{m})^m - 1 = e^{Q} - 1$$
+
+
+* Differential Equation
+
+Differential equations are equations which include variables and their derivatives.  Let V be our present amount of money, and let it be compounded continuously at /Q/.  Then we can write:
+
+$$\frac{dV}{V} = Qdt$$
+
+** Future Value
+
+We can use this differential equation to find the future value of some amount.  For example, say we have $100 today.  How much will this $100 be in 3 years if it is compounded continuously with an annual 5% rate?  Let /FV/ denote the future value.
+
+$$\int_{100}^{FV}\frac{dV}{V} = \int_{t=0}^3 0.05dt$$
+$$ln(FV) - ln(100) = 0.05(3) \Rightarrow FV = 100e^{0.05(3)} = 116.18$$
+
+The future value is $116.18.  
+
+** Time to Double
+
+
+
+
+
+* [[https://en.wikipedia.org/wiki/Flesch%25E2%2580%2593Kincaid_readability_tests][Reading Ease Score]]
+
+#+BEGIN_SRC elisp :results output :exports results
+(print (writegood-reading-ease))
+#+END_SRC
+
+#+RESULTS:
+: 
+: "Flesch-Kincaid reading ease score: 81.69 Easy (6th grade)"
+
+#+BEGIN_SRC elisp :results output :exports results
+(print (writegood-grade-level))
+#+END_SRC
+
+#+RESULTS:
+: 
+: "Flesch-Kincaid grade level score: 5.28"
