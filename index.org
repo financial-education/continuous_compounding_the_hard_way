@@ -80,7 +80,7 @@ $$FV = PV(1 + r)^t = PV(1 + e^{Q} - 1)^t = PVe^{Qt}$$
 
 The only issue is your text probably didn't explain how $(1 + \frac{Q}{m})^m - 1 = e^{Q} - 1$ in the limit---it just says it does.
 
-* Alternative Differential Equation Derivation of $FV=e^{Qt}$
+* Alternative Differential Equation Derivation of $FV=PVe^{Qt}$
 
 We can set up the following differential equation.  This is just a modification of our above approach.  Here $\frac{dV}{dt} is the rate of change of the value of our investment, and $QV$ is the rate at which interest increases.
 
@@ -88,15 +88,17 @@ $$\frac{dV}{dt} = QV$$
 
 Also say we know our present value, $V_0$ or more commonly /PV/.  We can solve this equation as follows:
 
+We can rewrite the equation as:
 
+$$\frac{d}{dt}ln|V| = Q$$
 
+and integrating both sides:
 
+$$ln|V| = Qt + C$$
 
+where C is an arbitrary constant of integration, however given the /PV/, and taking the exponential of both sides we have the value at time /t/ (defining it to be /FV/):
 
-
-
-
-
+$$V \equiv FV = PVe^Qt$$
 
 
 * [[https://en.wikipedia.org/wiki/Flesch%25E2%2580%2593Kincaid_readability_tests][Reading Ease Score]]
@@ -107,7 +109,7 @@ Also say we know our present value, $V_0$ or more commonly /PV/.  We can solve t
 
 #+RESULTS:
 : 
-: "Flesch-Kincaid reading ease score: 117.89 Very easy (5th grade)"
+: "Flesch-Kincaid reading ease score: 116.51 Very easy (5th grade)"
 
 #+BEGIN_SRC elisp :results output :exports results
 (print (writegood-grade-level))
@@ -115,4 +117,4 @@ Also say we know our present value, $V_0$ or more commonly /PV/.  We can solve t
 
 #+RESULTS:
 : 
-: "Flesch-Kincaid grade level score: -0.10"
+: "Flesch-Kincaid grade level score: 0.30"
