@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-07-11 Sat 21:53 -->
+<!-- 2020-07-11 Sat 23:10 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Continuous Compounding the Hard Way</title>
@@ -262,39 +262,29 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9eea101">1. Continuous Compounding</a></li>
-<li><a href="#org401f0e7">2. Differential Equation</a>
+<li><a href="#org84d98a9">1. Differential Equation for Continuous Compounding</a>
 <ul>
-<li><a href="#org7b78cea">2.1. Future Value</a></li>
-<li><a href="#org73843c1">2.2. Present Value</a></li>
-<li><a href="#org848a947">2.3. Time to Reach a Given Amount</a>
+<li><a href="#org3f8dd71">1.1. Future Value</a></li>
+<li><a href="#orgdd74272">1.2. Present Value</a></li>
+<li><a href="#org87b6e2a">1.3. Time to Reach a Given Amount</a>
 <ul>
-<li><a href="#org6faeb34">2.3.1. Time to Double</a></li>
+<li><a href="#orge2a8d30">1.3.1. Time to Double</a></li>
 </ul>
 </li>
-<li><a href="#org64f966a">2.4. Rate Required</a></li>
+<li><a href="#orged0d8a5">1.4. Rate Required</a></li>
 </ul>
 </li>
-<li><a href="#orga3a0892">3. <i>FV</i> Equation</a>
-<ul>
-<li><a href="#org959cdaf">3.1. The Easy Way</a></li>
-<li><a href="#org9878b71">3.2. Via Differential Equation</a></li>
-</ul>
-</li>
-<li><a href="#org6ed8833">4. Reading Ease Score</a></li>
+<li><a href="#orgd41b244">2. <i>FV</i> Equation The Easy Way</a></li>
+<li><a href="#org9fb3e90">3. Alternative Differential Equation Derivation of \(FV=e^{Qt}\)</a></li>
+<li><a href="#orgd9f88be">4. Reading Ease Score</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org9eea101" class="outline-2">
-<h2 id="org9eea101"><span class="section-number-2">1</span> Continuous Compounding</h2>
-</div>
 
-
-
-<div id="outline-container-org401f0e7" class="outline-2">
-<h2 id="org401f0e7"><span class="section-number-2">2</span> Differential Equation</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org84d98a9" class="outline-2">
+<h2 id="org84d98a9"><span class="section-number-2">1</span> Differential Equation for Continuous Compounding</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 Differential equations are equations which include variables and their derivatives.  Let V be our present amount of money, and let it be compounded continuously at <i>Q</i>.  Then we can write:
 </p>
@@ -302,11 +292,15 @@ Differential equations are equations which include variables and their derivativ
 <p>
 \[\frac{dV}{V} = Qdt\]
 </p>
+
+<p>
+This says the percent change in value over the next instant is the quoted interest rate times and instantaneous length of time.
+</p>
 </div>
 
-<div id="outline-container-org7b78cea" class="outline-3">
-<h3 id="org7b78cea"><span class="section-number-3">2.1</span> Future Value</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-org3f8dd71" class="outline-3">
+<h3 id="org3f8dd71"><span class="section-number-3">1.1</span> Future Value</h3>
+<div class="outline-text-3" id="text-1-1">
 <p>
 We can use this differential equation to find the future value of some amount.  For example, say we have $100 today.  How much will this $100 be in 3 years if it is compounded continuously with an annual 5% rate?  Let <i>FV</i> denote the future value.
 </p>
@@ -319,12 +313,20 @@ We can use this differential equation to find the future value of some amount.  
 <p>
 The future value is $116.18.  
 </p>
+
+<p>
+Note, if in the above we let the present value, quoted rate, and number of years be denoted by <i>PV</i>, <i>Q</i>, and <i>t</i> respectively, we have:
+</p>
+
+<p>
+\[FV = PVe^{Qt}\]
+</p>
 </div>
 </div>
 
-<div id="outline-container-org73843c1" class="outline-3">
-<h3 id="org73843c1"><span class="section-number-3">2.2</span> Present Value</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-orgdd74272" class="outline-3">
+<h3 id="orgdd74272"><span class="section-number-3">1.2</span> Present Value</h3>
+<div class="outline-text-3" id="text-1-2">
 <p>
 Say instead we know the future value, $116.18, and want to know the present value.
 </p>
@@ -336,9 +338,9 @@ Say instead we know the future value, $116.18, and want to know the present valu
 </div>
 </div>
 
-<div id="outline-container-org848a947" class="outline-3">
-<h3 id="org848a947"><span class="section-number-3">2.3</span> Time to Reach a Given Amount</h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-org87b6e2a" class="outline-3">
+<h3 id="org87b6e2a"><span class="section-number-3">1.3</span> Time to Reach a Given Amount</h3>
+<div class="outline-text-3" id="text-1-3">
 <p>
 How many years will it take for $100 to become $140?  
 </p>
@@ -353,9 +355,9 @@ It will take 6.73 years.
 </p>
 </div>
 
-<div id="outline-container-org6faeb34" class="outline-4">
-<h4 id="org6faeb34"><span class="section-number-4">2.3.1</span> Time to Double</h4>
-<div class="outline-text-4" id="text-2-3-1">
+<div id="outline-container-orge2a8d30" class="outline-4">
+<h4 id="orge2a8d30"><span class="section-number-4">1.3.1</span> Time to Double</h4>
+<div class="outline-text-4" id="text-1-3-1">
 <p>
 Let's say we want to know how many years it will take to double our money to $200.  
 </p>
@@ -372,26 +374,40 @@ It will take 13.86 years.
 </div>
 </div>
 
-<div id="outline-container-org64f966a" class="outline-3">
-<h3 id="org64f966a"><span class="section-number-3">2.4</span> Rate Required</h3>
+<div id="outline-container-orged0d8a5" class="outline-3">
+<h3 id="orged0d8a5"><span class="section-number-3">1.4</span> Rate Required</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Let's say we want to know what rate of return (<i>Q</i>) we will have to earn per year to have $175 in 10 years.  
+</p>
+
+<p>
+\[\int_{100}^{175}\frac{dV}{V} = \int_{t=0}^10 Qdt\]
+\[ln(175) - ln(100) = Q(10) \Rightarrow Q = \frac{ln(175) - ln(100)}{10} = 0.05596\]
+</p>
+
+<p>
+We will have to earn about 5.60% per year.
+</p>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-<div id="outline-container-orga3a0892" class="outline-2">
-<h2 id="orga3a0892"><span class="section-number-2">3</span> <i>FV</i> Equation</h2>
-<div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org959cdaf" class="outline-3">
-<h3 id="org959cdaf"><span class="section-number-3">3.1</span> The Easy Way</h3>
-<div class="outline-text-3" id="text-3-1">
+
+<div id="outline-container-orgd41b244" class="outline-2">
+<h2 id="orgd41b244"><span class="section-number-2">2</span> <i>FV</i> Equation The Easy Way</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+You might say it is easier to just use the formula for the Future Value you get from your textbook:
+</p>
+
+<p>
+\[FV = e^{rT}\]
+</p>
+
+<p>
+You can rearrange this formula to answer any of the above questions.  However how did your text get this formula? It usually does the foloowing.
+</p>
+
 <p>
 Let <i>Q</i> be the annual stated rate, and let there be <i>m</i> compounding periods.  Then the <i>Effective Annual Rate</i> is:
 </p>
@@ -407,14 +423,39 @@ Letting the number of compounding periods increase to infinity we have:
 <p>
 \[lim_{n\to\infty} = (1 + \frac{Q}{m})^m - 1 = e^{Q} - 1\]
 </p>
+
+<p>
+Using this rate we have:
+</p>
+
+<p>
+\[FV = PV(1 + r)^t = PV(1 + e^{Q} - 1)^t = PVe^{Qt}\]
+</p>
+
+<p>
+The only issue is your text probably didn't explain how \((1 + \frac{Q}{m})^m - 1 = e^{Q} - 1\) in the limit&#x2014;it just says it does.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9fb3e90" class="outline-2">
+<h2 id="org9fb3e90"><span class="section-number-2">3</span> Alternative Differential Equation Derivation of \(FV=e^{Qt}\)</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+We can set up the following differential equation.  This is just a modification of our above approach.  Here $\frac{dV}{dt} is the rate of change of the value of our investment, and \(QV\) is the rate at which interest increases.
+</p>
+
+<p>
+\[\frac{dV}{dt} = QV\]
+</p>
+
+<p>
+Also say we know our present value, \(V_0\) or more commonly <i>PV</i>.  We can solve this equation as follows:
+</p>
 </div>
 </div>
 
 
-<div id="outline-container-org9878b71" class="outline-3">
-<h3 id="org9878b71"><span class="section-number-3">3.2</span> Via Differential Equation</h3>
-</div>
-</div>
 
 
 
@@ -423,18 +464,20 @@ Letting the number of compounding periods increase to infinity we have:
 
 
 
-<div id="outline-container-org6ed8833" class="outline-2">
-<h2 id="org6ed8833"><span class="section-number-2">4</span> <a href="https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests">Reading Ease Score</a></h2>
+
+
+<div id="outline-container-orgd9f88be" class="outline-2">
+<h2 id="orgd9f88be"><span class="section-number-2">4</span> <a href="https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests">Reading Ease Score</a></h2>
 <div class="outline-text-2" id="text-4">
 <pre class="example">
 
-"Flesch-Kincaid reading ease score: 120.76 Very easy (5th grade)"
+"Flesch-Kincaid reading ease score: 117.74 Very easy (5th grade)"
 
 </pre>
 
 <pre class="example">
 
-"Flesch-Kincaid grade level score: -1.51"
+"Flesch-Kincaid grade level score: -0.32"
 
 </pre>
 </div>
@@ -442,7 +485,7 @@ Letting the number of compounding periods increase to infinity we have:
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Brigida, Ph.D.</p>
-<p class="date">Created: 2020-07-11 Sat 21:53</p>
+<p class="date">Created: 2020-07-11 Sat 23:10</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

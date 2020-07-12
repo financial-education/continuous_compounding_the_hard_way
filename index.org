@@ -2,15 +2,14 @@
 #+author: Matt Brigida, Ph.D.
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
 
-* Continuous Compounding
 
-
-
-* Differential Equation
+* Differential Equation for Continuous Compounding
 
 Differential equations are equations which include variables and their derivatives.  Let V be our present amount of money, and let it be compounded continuously at /Q/.  Then we can write:
 
 $$\frac{dV}{V} = Qdt$$
+
+This says the percent change in value over the next instant is the quoted interest rate times and instantaneous length of time.
 
 ** Future Value
 
@@ -20,6 +19,10 @@ $$\int_{100}^{FV}\frac{dV}{V} = \int_{t=0}^3 0.05dt$$
 $$ln(FV) - ln(100) = 0.05(3) \Rightarrow e^{ln(FV)} = e^{ln(100) + 0.05(3)} \Rightarrow FV = 100e^{0.05(3)} = 116.18$$
 
 The future value is $116.18.  
+
+Note, if in the above we let the present value, quoted rate, and number of years be denoted by /PV/, /Q/, and /t/ respectively, we have:
+
+$$FV = PVe^{Qt}$$
 
 ** Present Value
 
@@ -48,17 +51,20 @@ It will take 13.86 years.
 
 ** Rate Required
 
+Let's say we want to know what rate of return (/Q/) we will have to earn per year to have $175 in 10 years.  
 
+$$\int_{100}^{175}\frac{dV}{V} = \int_{t=0}^10 Qdt$$
+$$ln(175) - ln(100) = Q(10) \Rightarrow Q = \frac{ln(175) - ln(100)}{10} = 0.05596$$
 
+We will have to earn about 5.60% per year.
 
+* /FV/ Equation The Easy Way
 
+You might say it is easier to just use the formula for the Future Value you get from your textbook:
 
+$$FV = e^{rT}$$
 
-
-
-* /FV/ Equation
-
-** The Easy Way
+You can rearrange this formula to answer any of the above questions.  However how did your text get this formula? It usually does the foloowing.
 
 Let /Q/ be the annual stated rate, and let there be /m/ compounding periods.  Then the /Effective Annual Rate/ is:
 
@@ -68,8 +74,23 @@ Letting the number of compounding periods increase to infinity we have:
 
 $$lim_{n\to\infty} = (1 + \frac{Q}{m})^m - 1 = e^{Q} - 1$$
 
+Using this rate we have:
 
-** Via Differential Equation
+$$FV = PV(1 + r)^t = PV(1 + e^{Q} - 1)^t = PVe^{Qt}$$
+
+The only issue is your text probably didn't explain how $(1 + \frac{Q}{m})^m - 1 = e^{Q} - 1$ in the limit---it just says it does.
+
+* Alternative Differential Equation Derivation of $FV=e^{Qt}$
+
+We can set up the following differential equation.  This is just a modification of our above approach.  Here $\frac{dV}{dt} is the rate of change of the value of our investment, and $QV$ is the rate at which interest increases.
+
+$$\frac{dV}{dt} = QV$$
+
+Also say we know our present value, $V_0$ or more commonly /PV/.  We can solve this equation as follows:
+
+
+
+
 
 
 
@@ -86,7 +107,7 @@ $$lim_{n\to\infty} = (1 + \frac{Q}{m})^m - 1 = e^{Q} - 1$$
 
 #+RESULTS:
 : 
-: "Flesch-Kincaid reading ease score: 81.69 Easy (6th grade)"
+: "Flesch-Kincaid reading ease score: 117.89 Very easy (5th grade)"
 
 #+BEGIN_SRC elisp :results output :exports results
 (print (writegood-grade-level))
@@ -94,4 +115,4 @@ $$lim_{n\to\infty} = (1 + \frac{Q}{m})^m - 1 = e^{Q} - 1$$
 
 #+RESULTS:
 : 
-: "Flesch-Kincaid grade level score: 5.28"
+: "Flesch-Kincaid grade level score: -0.10"
