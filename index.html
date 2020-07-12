@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-07-11 Sat 13:48 -->
+<!-- 2020-07-11 Sat 16:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Continuous Compounding the Hard Way</title>
@@ -262,15 +262,20 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org33172b0">1. Continuous Compounding</a></li>
-<li><a href="#org1919832">2. Differential Equation</a></li>
-<li><a href="#org5b999bc">3. Reading Ease Score</a></li>
+<li><a href="#org771e87a">1. Continuous Compounding</a></li>
+<li><a href="#orgb8d7ce8">2. Differential Equation</a>
+<ul>
+<li><a href="#orgd9162e8">2.1. Future Value</a></li>
+<li><a href="#orge361d8c">2.2. Time to Double</a></li>
+</ul>
+</li>
+<li><a href="#orga41fdfa">3. Reading Ease Score</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org33172b0" class="outline-2">
-<h2 id="org33172b0"><span class="section-number-2">1</span> Continuous Compounding</h2>
+<div id="outline-container-org771e87a" class="outline-2">
+<h2 id="org771e87a"><span class="section-number-2">1</span> Continuous Compounding</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Let <i>Q</i> be the annual stated rate, and let there be <i>m</i> compounding periods.  Then the <i>Effective Annual Rate</i> is:
@@ -291,8 +296,8 @@ Letting the number of compounding periods increase to infinity we have:
 </div>
 
 
-<div id="outline-container-org1919832" class="outline-2">
-<h2 id="org1919832"><span class="section-number-2">2</span> Differential Equation</h2>
+<div id="outline-container-orgb8d7ce8" class="outline-2">
+<h2 id="orgb8d7ce8"><span class="section-number-2">2</span> Differential Equation</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Differential equations are equations which include variables and their derivatives.  Let V be our present amount of money, and let it be compounded continuously at <i>Q</i>.  Then we can write:
@@ -301,7 +306,11 @@ Differential equations are equations which include variables and their derivativ
 <p>
 \[\frac{dV}{V} = Qdt\]
 </p>
+</div>
 
+<div id="outline-container-orgd9162e8" class="outline-3">
+<h3 id="orgd9162e8"><span class="section-number-3">2.1</span> Future Value</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
 We can use this differential equation to find the future value of some amount.  For example, say we have $100 today.  How much will this $100 be in 3 years if it is compounded continuously with an annual 5% rate?  Let <i>FV</i> denote the future value.
 </p>
@@ -310,24 +319,41 @@ We can use this differential equation to find the future value of some amount.  
 \[\int_{100}^{FV}\frac{dV}{V} = \int_{t=0}^3 0.05dt\]
 \[ln(FV) - ln(100) = 0.05(3) \Rightarrow FV = 100e^{0.05(3)} = 116.18\]
 </p>
+
+<p>
+The future value is $116.18.  
+</p>
 </div>
 </div>
 
+<div id="outline-container-orge361d8c" class="outline-3">
+<h3 id="orge361d8c"><span class="section-number-3">2.2</span> Time to Double</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Let's say we want to know how many years it will take to double our money to $200.  
+</p>
+
+<p>
+\[\int_{100}^{200}\frac{dV}{V} = \int_{t=0}^T 0.05dt\]
+\[ln(200) - ln(100) = 0.05(T) \Rightarrow T = \frac{ln(200) - ln(100)}{0.05} = 13.86\]
+</p>
+</div>
+</div>
+</div>
 
 
-
-<div id="outline-container-org5b999bc" class="outline-2">
-<h2 id="org5b999bc"><span class="section-number-2">3</span> <a href="https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests">Reading Ease Score</a></h2>
+<div id="outline-container-orga41fdfa" class="outline-2">
+<h2 id="orga41fdfa"><span class="section-number-2">3</span> <a href="https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests">Reading Ease Score</a></h2>
 <div class="outline-text-2" id="text-3">
 <pre class="example">
 
-"Flesch-Kincaid reading ease score: 98.07 Very easy (5th grade)"
+"Flesch-Kincaid reading ease score: 108.33 Very easy (5th grade)"
 
 </pre>
 
 <pre class="example">
 
-"Flesch-Kincaid grade level score: 2.14"
+"Flesch-Kincaid grade level score: 0.53"
 
 </pre>
 </div>
@@ -335,7 +361,7 @@ We can use this differential equation to find the future value of some amount.  
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Brigida, Ph.D.</p>
-<p class="date">Created: 2020-07-11 Sat 13:48</p>
+<p class="date">Created: 2020-07-11 Sat 16:45</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -4,13 +4,6 @@
 
 * Continuous Compounding
 
-Let /Q/ be the annual stated rate, and let there be /m/ compounding periods.  Then the /Effective Annual Rate/ is:
-
-$$EAR = (1 + \frac{Q}{m})^m - 1$$
-
-Letting the number of compounding periods increase to infinity we have:
-
-$$lim_{n\to\infty} = (1 + \frac{Q}{m})^m - 1 = e^{Q} - 1$$
 
 
 * Differential Equation
@@ -29,6 +22,31 @@ $$ln(FV) - ln(100) = 0.05(3) \Rightarrow FV = 100e^{0.05(3)} = 116.18$$
 The future value is $116.18.  
 
 ** Time to Double
+
+Let's say we want to know how many years it will take to double our money to $200.  
+
+$$\int_{100}^{200}\frac{dV}{V} = \int_{t=0}^T 0.05dt$$
+$$ln(200) - ln(100) = 0.05(T) \Rightarrow T = \frac{ln(200) - ln(100)}{0.05} = 13.86$$
+
+It will take 13.86 years.
+
+* /FV/ Equation
+
+** The Easy Way
+
+Let /Q/ be the annual stated rate, and let there be /m/ compounding periods.  Then the /Effective Annual Rate/ is:
+
+$$EAR = (1 + \frac{Q}{m})^m - 1$$
+
+Letting the number of compounding periods increase to infinity we have:
+
+$$lim_{n\to\infty} = (1 + \frac{Q}{m})^m - 1 = e^{Q} - 1$$
+
+
+** Via Differential Equation
+
+
+
 
 
 
