@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-07-11 Sat 16:45 -->
+<!-- 2020-07-11 Sat 21:53 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Continuous Compounding the Hard Way</title>
@@ -262,21 +262,136 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org771e87a">1. Continuous Compounding</a></li>
-<li><a href="#orgb8d7ce8">2. Differential Equation</a>
+<li><a href="#org9eea101">1. Continuous Compounding</a></li>
+<li><a href="#org401f0e7">2. Differential Equation</a>
 <ul>
-<li><a href="#orgd9162e8">2.1. Future Value</a></li>
-<li><a href="#orge361d8c">2.2. Time to Double</a></li>
+<li><a href="#org7b78cea">2.1. Future Value</a></li>
+<li><a href="#org73843c1">2.2. Present Value</a></li>
+<li><a href="#org848a947">2.3. Time to Reach a Given Amount</a>
+<ul>
+<li><a href="#org6faeb34">2.3.1. Time to Double</a></li>
 </ul>
 </li>
-<li><a href="#orga41fdfa">3. Reading Ease Score</a></li>
+<li><a href="#org64f966a">2.4. Rate Required</a></li>
+</ul>
+</li>
+<li><a href="#orga3a0892">3. <i>FV</i> Equation</a>
+<ul>
+<li><a href="#org959cdaf">3.1. The Easy Way</a></li>
+<li><a href="#org9878b71">3.2. Via Differential Equation</a></li>
+</ul>
+</li>
+<li><a href="#org6ed8833">4. Reading Ease Score</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org771e87a" class="outline-2">
-<h2 id="org771e87a"><span class="section-number-2">1</span> Continuous Compounding</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org9eea101" class="outline-2">
+<h2 id="org9eea101"><span class="section-number-2">1</span> Continuous Compounding</h2>
+</div>
+
+
+
+<div id="outline-container-org401f0e7" class="outline-2">
+<h2 id="org401f0e7"><span class="section-number-2">2</span> Differential Equation</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Differential equations are equations which include variables and their derivatives.  Let V be our present amount of money, and let it be compounded continuously at <i>Q</i>.  Then we can write:
+</p>
+
+<p>
+\[\frac{dV}{V} = Qdt\]
+</p>
+</div>
+
+<div id="outline-container-org7b78cea" class="outline-3">
+<h3 id="org7b78cea"><span class="section-number-3">2.1</span> Future Value</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+We can use this differential equation to find the future value of some amount.  For example, say we have $100 today.  How much will this $100 be in 3 years if it is compounded continuously with an annual 5% rate?  Let <i>FV</i> denote the future value.
+</p>
+
+<p>
+\[\int_{100}^{FV}\frac{dV}{V} = \int_{t=0}^3 0.05dt\]
+\[ln(FV) - ln(100) = 0.05(3) \Rightarrow e^{ln(FV)} = e^{ln(100) + 0.05(3)} \Rightarrow FV = 100e^{0.05(3)} = 116.18\]
+</p>
+
+<p>
+The future value is $116.18.  
+</p>
+</div>
+</div>
+
+<div id="outline-container-org73843c1" class="outline-3">
+<h3 id="org73843c1"><span class="section-number-3">2.2</span> Present Value</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Say instead we know the future value, $116.18, and want to know the present value.
+</p>
+
+<p>
+\[\int_{PV}^{116.18}\frac{dV}{V} = \int_{t=0}^3 0.05dt\]
+\[ln(116.18) - ln(PV) = 0.05(3) \Rightarrow PV = 116.18e^{-0.05(3)} = 100\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org848a947" class="outline-3">
+<h3 id="org848a947"><span class="section-number-3">2.3</span> Time to Reach a Given Amount</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+How many years will it take for $100 to become $140?  
+</p>
+
+<p>
+\[\int_{100}^{140}\frac{dV}{V} = \int_{t=0}^T 0.05dt\]
+\[ln(140) - ln(100) = 0.05(3) \Rightarrow T = \frac{ln(140) - ln(100)}{0.05} = 6.73\]
+</p>
+
+<p>
+It will take 6.73 years.
+</p>
+</div>
+
+<div id="outline-container-org6faeb34" class="outline-4">
+<h4 id="org6faeb34"><span class="section-number-4">2.3.1</span> Time to Double</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+Let's say we want to know how many years it will take to double our money to $200.  
+</p>
+
+<p>
+\[\int_{100}^{200}\frac{dV}{V} = \int_{t=0}^T 0.05dt\]
+\[ln(200) - ln(100) = 0.05(T) \Rightarrow T = \frac{ln(200) - ln(100)}{0.05} = 13.86\]
+</p>
+
+<p>
+It will take 13.86 years.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org64f966a" class="outline-3">
+<h3 id="org64f966a"><span class="section-number-3">2.4</span> Rate Required</h3>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="outline-container-orga3a0892" class="outline-2">
+<h2 id="orga3a0892"><span class="section-number-2">3</span> <i>FV</i> Equation</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org959cdaf" class="outline-3">
+<h3 id="org959cdaf"><span class="section-number-3">3.1</span> The Easy Way</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
 Let <i>Q</i> be the annual stated rate, and let there be <i>m</i> compounding periods.  Then the <i>Effective Annual Rate</i> is:
 </p>
@@ -296,64 +411,30 @@ Letting the number of compounding periods increase to infinity we have:
 </div>
 
 
-<div id="outline-container-orgb8d7ce8" class="outline-2">
-<h2 id="orgb8d7ce8"><span class="section-number-2">2</span> Differential Equation</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-Differential equations are equations which include variables and their derivatives.  Let V be our present amount of money, and let it be compounded continuously at <i>Q</i>.  Then we can write:
-</p>
-
-<p>
-\[\frac{dV}{V} = Qdt\]
-</p>
-</div>
-
-<div id="outline-container-orgd9162e8" class="outline-3">
-<h3 id="orgd9162e8"><span class="section-number-3">2.1</span> Future Value</h3>
-<div class="outline-text-3" id="text-2-1">
-<p>
-We can use this differential equation to find the future value of some amount.  For example, say we have $100 today.  How much will this $100 be in 3 years if it is compounded continuously with an annual 5% rate?  Let <i>FV</i> denote the future value.
-</p>
-
-<p>
-\[\int_{100}^{FV}\frac{dV}{V} = \int_{t=0}^3 0.05dt\]
-\[ln(FV) - ln(100) = 0.05(3) \Rightarrow FV = 100e^{0.05(3)} = 116.18\]
-</p>
-
-<p>
-The future value is $116.18.  
-</p>
-</div>
-</div>
-
-<div id="outline-container-orge361d8c" class="outline-3">
-<h3 id="orge361d8c"><span class="section-number-3">2.2</span> Time to Double</h3>
-<div class="outline-text-3" id="text-2-2">
-<p>
-Let's say we want to know how many years it will take to double our money to $200.  
-</p>
-
-<p>
-\[\int_{100}^{200}\frac{dV}{V} = \int_{t=0}^T 0.05dt\]
-\[ln(200) - ln(100) = 0.05(T) \Rightarrow T = \frac{ln(200) - ln(100)}{0.05} = 13.86\]
-</p>
-</div>
+<div id="outline-container-org9878b71" class="outline-3">
+<h3 id="org9878b71"><span class="section-number-3">3.2</span> Via Differential Equation</h3>
 </div>
 </div>
 
 
-<div id="outline-container-orga41fdfa" class="outline-2">
-<h2 id="orga41fdfa"><span class="section-number-2">3</span> <a href="https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests">Reading Ease Score</a></h2>
-<div class="outline-text-2" id="text-3">
+
+
+
+
+
+
+<div id="outline-container-org6ed8833" class="outline-2">
+<h2 id="org6ed8833"><span class="section-number-2">4</span> <a href="https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests">Reading Ease Score</a></h2>
+<div class="outline-text-2" id="text-4">
 <pre class="example">
 
-"Flesch-Kincaid reading ease score: 108.33 Very easy (5th grade)"
+"Flesch-Kincaid reading ease score: 120.76 Very easy (5th grade)"
 
 </pre>
 
 <pre class="example">
 
-"Flesch-Kincaid grade level score: 0.53"
+"Flesch-Kincaid grade level score: -1.51"
 
 </pre>
 </div>
@@ -361,7 +442,7 @@ Let's say we want to know how many years it will take to double our money to $20
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Brigida, Ph.D.</p>
-<p class="date">Created: 2020-07-11 Sat 16:45</p>
+<p class="date">Created: 2020-07-11 Sat 21:53</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

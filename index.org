@@ -17,11 +17,27 @@ $$\frac{dV}{V} = Qdt$$
 We can use this differential equation to find the future value of some amount.  For example, say we have $100 today.  How much will this $100 be in 3 years if it is compounded continuously with an annual 5% rate?  Let /FV/ denote the future value.
 
 $$\int_{100}^{FV}\frac{dV}{V} = \int_{t=0}^3 0.05dt$$
-$$ln(FV) - ln(100) = 0.05(3) \Rightarrow FV = 100e^{0.05(3)} = 116.18$$
+$$ln(FV) - ln(100) = 0.05(3) \Rightarrow e^{ln(FV)} = e^{ln(100) + 0.05(3)} \Rightarrow FV = 100e^{0.05(3)} = 116.18$$
 
 The future value is $116.18.  
 
-** Time to Double
+** Present Value
+
+Say instead we know the future value, $116.18, and want to know the present value.
+
+$$\int_{PV}^{116.18}\frac{dV}{V} = \int_{t=0}^3 0.05dt$$
+$$ln(116.18) - ln(PV) = 0.05(3) \Rightarrow PV = 116.18e^{-0.05(3)} = 100$$
+
+** Time to Reach a Given Amount
+
+How many years will it take for $100 to become $140?  
+
+$$\int_{100}^{140}\frac{dV}{V} = \int_{t=0}^T 0.05dt$$
+$$ln(140) - ln(100) = 0.05(3) \Rightarrow T = \frac{ln(140) - ln(100)}{0.05} = 6.73$$
+
+It will take 6.73 years.
+
+*** Time to Double
 
 Let's say we want to know how many years it will take to double our money to $200.  
 
@@ -29,6 +45,16 @@ $$\int_{100}^{200}\frac{dV}{V} = \int_{t=0}^T 0.05dt$$
 $$ln(200) - ln(100) = 0.05(T) \Rightarrow T = \frac{ln(200) - ln(100)}{0.05} = 13.86$$
 
 It will take 13.86 years.
+
+** Rate Required
+
+
+
+
+
+
+
+
 
 * /FV/ Equation
 
