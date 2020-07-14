@@ -82,15 +82,15 @@ The only issue is your text probably didn't explain how $(1 + \frac{Q}{m})^m - 1
 
 * Alternative Differential Equation Derivation of $FV=PVe^{Qt}$
 
-We can set up the following differential equation.  This is just a modification of our above approach.  Here $\frac{dV}{dt} is the rate of change of the value of our investment, and $QV$ is the rate at which interest increases.
+We can set up the following differential equation.  This is just a modification of our above approach.  Here $\frac{dV}{dt}$ is the rate of change of the value of our investment, and $QV$ is the rate at which interest increases.
 
 $$\frac{dV}{dt} = QV$$
 
 Also say we know our present value, $V_0$ or more commonly /PV/.  We can solve this equation as follows:
 
-We can rewrite the equation as:
+Using the chain rule, we can rewrite the equation as:
 
-$$\frac{d}{dt}ln|V| = Q$$
+$$\frac{\frac{dV}{dt}}{V} = Q \Rightarrow \frac{d}{dt}ln|V| = Q$$
 
 and integrating both sides:
 

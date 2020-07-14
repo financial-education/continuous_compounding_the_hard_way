@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-07-12 Sun 16:27 -->
+<!-- 2020-07-13 Mon 23:36 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Continuous Compounding the Hard Way</title>
@@ -262,28 +262,28 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge39483f">1. Differential Equation for Continuous Compounding</a>
+<li><a href="#org10b07ce">1. Differential Equation for Continuous Compounding</a>
 <ul>
-<li><a href="#org96c4bbd">1.1. Future Value</a></li>
-<li><a href="#orgf7fcee3">1.2. Present Value</a></li>
-<li><a href="#org8ce9802">1.3. Time to Reach a Given Amount</a>
+<li><a href="#org6965d12">1.1. Future Value</a></li>
+<li><a href="#org31e602f">1.2. Present Value</a></li>
+<li><a href="#orgab4f254">1.3. Time to Reach a Given Amount</a>
 <ul>
-<li><a href="#org6b82b51">1.3.1. Time to Double</a></li>
+<li><a href="#orgdb0b1fc">1.3.1. Time to Double</a></li>
 </ul>
 </li>
-<li><a href="#org62ee0b0">1.4. Rate Required</a></li>
+<li><a href="#org569772e">1.4. Rate Required</a></li>
 </ul>
 </li>
-<li><a href="#org0cfa8a0">2. <i>FV</i> Equation The Easy Way</a></li>
-<li><a href="#org6f1455f">3. Alternative Differential Equation Derivation of \(FV=PVe^{Qt}\)</a></li>
-<li><a href="#org45e0d02">4. Reading Ease Score</a></li>
+<li><a href="#org16e7900">2. <i>FV</i> Equation The Easy Way</a></li>
+<li><a href="#orge8c193e">3. Alternative Differential Equation Derivation of \(FV=PVe^{Qt}\)</a></li>
+<li><a href="#org94fdd5c">4. Reading Ease Score</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-orge39483f" class="outline-2">
-<h2 id="orge39483f"><span class="section-number-2">1</span> Differential Equation for Continuous Compounding</h2>
+<div id="outline-container-org10b07ce" class="outline-2">
+<h2 id="org10b07ce"><span class="section-number-2">1</span> Differential Equation for Continuous Compounding</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Differential equations are equations which include variables and their derivatives.  Let V be our present amount of money, and let it be compounded continuously at <i>Q</i>.  Then we can write:
@@ -298,8 +298,8 @@ This says the percent change in value over the next instant is the quoted intere
 </p>
 </div>
 
-<div id="outline-container-org96c4bbd" class="outline-3">
-<h3 id="org96c4bbd"><span class="section-number-3">1.1</span> Future Value</h3>
+<div id="outline-container-org6965d12" class="outline-3">
+<h3 id="org6965d12"><span class="section-number-3">1.1</span> Future Value</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 We can use this differential equation to find the future value of some amount.  For example, say we have $100 today.  How much will this $100 be in 3 years if it is compounded continuously with an annual 5% rate?  Let <i>FV</i> denote the future value.
@@ -324,8 +324,8 @@ Note, if in the above we let the present value, quoted rate, and number of years
 </div>
 </div>
 
-<div id="outline-container-orgf7fcee3" class="outline-3">
-<h3 id="orgf7fcee3"><span class="section-number-3">1.2</span> Present Value</h3>
+<div id="outline-container-org31e602f" class="outline-3">
+<h3 id="org31e602f"><span class="section-number-3">1.2</span> Present Value</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Say instead we know the future value, $116.18, and want to know the present value.
@@ -338,8 +338,8 @@ Say instead we know the future value, $116.18, and want to know the present valu
 </div>
 </div>
 
-<div id="outline-container-org8ce9802" class="outline-3">
-<h3 id="org8ce9802"><span class="section-number-3">1.3</span> Time to Reach a Given Amount</h3>
+<div id="outline-container-orgab4f254" class="outline-3">
+<h3 id="orgab4f254"><span class="section-number-3">1.3</span> Time to Reach a Given Amount</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 How many years will it take for $100 to become $140?  
@@ -355,8 +355,8 @@ It will take 6.73 years.
 </p>
 </div>
 
-<div id="outline-container-org6b82b51" class="outline-4">
-<h4 id="org6b82b51"><span class="section-number-4">1.3.1</span> Time to Double</h4>
+<div id="outline-container-orgdb0b1fc" class="outline-4">
+<h4 id="orgdb0b1fc"><span class="section-number-4">1.3.1</span> Time to Double</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <p>
 Let's say we want to know how many years it will take to double our money to $200.  
@@ -374,8 +374,8 @@ It will take 13.86 years.
 </div>
 </div>
 
-<div id="outline-container-org62ee0b0" class="outline-3">
-<h3 id="org62ee0b0"><span class="section-number-3">1.4</span> Rate Required</h3>
+<div id="outline-container-org569772e" class="outline-3">
+<h3 id="org569772e"><span class="section-number-3">1.4</span> Rate Required</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 Let's say we want to know what rate of return (<i>Q</i>) we will have to earn per year to have $175 in 10 years.  
@@ -393,8 +393,8 @@ We will have to earn about 5.60% per year.
 </div>
 </div>
 
-<div id="outline-container-org0cfa8a0" class="outline-2">
-<h2 id="org0cfa8a0"><span class="section-number-2">2</span> <i>FV</i> Equation The Easy Way</h2>
+<div id="outline-container-org16e7900" class="outline-2">
+<h2 id="org16e7900"><span class="section-number-2">2</span> <i>FV</i> Equation The Easy Way</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 You might say it is easier to just use the formula for the Future Value you get from your textbook:
@@ -438,11 +438,11 @@ The only issue is your text probably didn't explain how \((1 + \frac{Q}{m})^m - 
 </div>
 </div>
 
-<div id="outline-container-org6f1455f" class="outline-2">
-<h2 id="org6f1455f"><span class="section-number-2">3</span> Alternative Differential Equation Derivation of \(FV=PVe^{Qt}\)</h2>
+<div id="outline-container-orge8c193e" class="outline-2">
+<h2 id="orge8c193e"><span class="section-number-2">3</span> Alternative Differential Equation Derivation of \(FV=PVe^{Qt}\)</h2>
 <div class="outline-text-2" id="text-3">
 <p>
-We can set up the following differential equation.  This is just a modification of our above approach.  Here $\frac{dV}{dt} is the rate of change of the value of our investment, and \(QV\) is the rate at which interest increases.
+We can set up the following differential equation.  This is just a modification of our above approach.  Here \(\frac{dV}{dt}\) is the rate of change of the value of our investment, and \(QV\) is the rate at which interest increases.
 </p>
 
 <p>
@@ -454,11 +454,11 @@ Also say we know our present value, \(V_0\) or more commonly <i>PV</i>.  We can 
 </p>
 
 <p>
-We can rewrite the equation as:
+Using the chain rule, we can rewrite the equation as:
 </p>
 
 <p>
-\[\frac{d}{dt}ln|V| = Q\]
+\[\frac{\frac{dV}{dt}}{V} = Q \Rightarrow \frac{d}{dt}ln|V| = Q\]
 </p>
 
 <p>
@@ -480,18 +480,18 @@ where C is an arbitrary constant of integration, however given the <i>PV</i>, an
 </div>
 
 
-<div id="outline-container-org45e0d02" class="outline-2">
-<h2 id="org45e0d02"><span class="section-number-2">4</span> <a href="https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests">Reading Ease Score</a></h2>
+<div id="outline-container-org94fdd5c" class="outline-2">
+<h2 id="org94fdd5c"><span class="section-number-2">4</span> <a href="https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests">Reading Ease Score</a></h2>
 <div class="outline-text-2" id="text-4">
 <pre class="example">
 
-"Flesch-Kincaid reading ease score: 116.37 Very easy (5th grade)"
+"Flesch-Kincaid reading ease score: 116.36 Very easy (5th grade)"
 
 </pre>
 
 <pre class="example">
 
-"Flesch-Kincaid grade level score: 0.12"
+"Flesch-Kincaid grade level score: 0.18"
 
 </pre>
 </div>
@@ -499,7 +499,7 @@ where C is an arbitrary constant of integration, however given the <i>PV</i>, an
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Brigida, Ph.D.</p>
-<p class="date">Created: 2020-07-12 Sun 16:27</p>
+<p class="date">Created: 2020-07-13 Mon 23:36</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
